@@ -69,3 +69,5 @@ int main() {
     cout << "Terima kasih!";
     return 0;
 }
+
+// test
