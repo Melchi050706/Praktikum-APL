@@ -1,7 +1,4 @@
 #include <iostream>
-#include <cmath>
-#include <string>
-
 using namespace std;
 
 bool isPrime(int num) {
@@ -37,7 +34,7 @@ bool login() {
         cout << "Masukkan password: ";
         cin >> password;
         
-        if (username == "1" && password == "1") {
+        if (username == "Melchizedek" && password == "2409106117") {
             cout << "Berhasil login\n";
             return true;
         } else {
@@ -53,7 +50,11 @@ int main() {
     do {
         cout << "Masukkan kode sandi (harus lebih dari 100 dan tidak lebih dari 99999): ";
         cin >> kodeSandi;
+        if (kodeSandi <= 100 || kodeSandi > 99999) {
+            cout << "Kata sandi tidak boleh kurang dari 100 dan tidak boleh lebih dari 99999.\n";
+        }
     } while (kodeSandi <= 100 || kodeSandi > 99999);
+        
     
     int pilihan;
     do {
@@ -61,13 +62,11 @@ int main() {
         cin >> pilihan;
         
         if (pilihan == 1) cout << (isPrime(kodeSandi) ? "Kode sandi adalah bilangan prima.\n" : "Bukan bilangan prima.\n");
-        else if (pilihan == 2) cout << (isValidCode(kodeSandi) ? "Kode sandi memenuhi syarat.\n" : "Tidak memenuhi syarat.\n");
+        else if (pilihan == 2) cout << (isValidCode(kodeSandi) ? "Kode sandi memenuhi syarat.\n" : "Kode sandi tidak memenuhi syarat.\n");
         else if (pilihan == 3) cout << (isPalindrome(kodeSandi) ? "Kode sandi adalah palindrome.\n" : "Bukan palindrome.\n");
-        else if (pilihan != 4) cout << "Pilihan tidak valid.\n";
+        else if (pilihan != 4) cout << "Pilihan cuma ada nomor 1-4.\n";
     } while (pilihan != 4);
     
     cout << "Terima kasih!";
     return 0;
 }
-
-// test
